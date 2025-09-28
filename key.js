@@ -174,7 +174,6 @@
     }
   `;
 
-  // --- UI Injection and Control Logic (Simplified for review) ---
 
   function injectCSS(css) {
     const s = document.createElement('style');
@@ -240,9 +239,9 @@
           if (!text || text.includes('Awaiting Key')) return setStatus('ERROR: No valid key data to process');
           try {
             await navigator.clipboard.writeText(text);
-            setStatus('✅ Key Copied. Clipboard Injection Confirmed.');
+            setStatus('✓ Key Copied. Clipboard Injection Confirmed.');
           } catch (e) {
-            setStatus('⚠️ Copy Failed. Manual Copy Required.');
+            setStatus('✘ Copy Failed. Manual Copy Required.');
             console.error('Copy error:', e);
           }
         }
@@ -267,9 +266,9 @@
           setCountdown(seconds) {
              elements.countdownEl.textContent = `Auto-Continue Protocol in: ${seconds} seconds...`;
              elements.countdownEl.style.display = 'block';
-             elements.keyBox.textContent = '— Auto-Continue Protocol Engaged —';
+             elements.keyBox.textContent = '— Continue Protocol Engaged —';
           },
-          show() { elements.wrapEl.style.opacity = '1'; }, // Use opacity transition
+          show() { elements.wrapEl.style.opacity = '1'; },
           hide() { elements.wrapEl.style.display = 'none'; }
         };
         window.__nt_ui = instance;
@@ -280,8 +279,6 @@
         return null;
     }
   }
-
-  // --- Automated Flow Execution (No change in core logic, just calling functions) ---
 
   async function clickContinueButton(ui) {
     ui.setStatus(`Verification Protocol Engaged. Searching for button...`);
@@ -341,9 +338,9 @@
     const key = keyEl ? keyEl.textContent.trim() : '';
     if (key) {
       ui.setKey(key);
-      ui.setStatus('✅ Key Retrieval Complete. Data Ready.');
+      ui.setStatus('✓ Key Retrieval Complete. Data Ready.');
     } else {
-      ui.setStatus('⚠️ ALERT: Key Data Not Found in Payload.');
+      ui.setStatus('✘ ALERT: Key Data Not Found in Payload.');
     }
   }
 
