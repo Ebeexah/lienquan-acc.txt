@@ -21,7 +21,7 @@
     VERIFY: '/verify.php'
   };
   const OPEN_URL = 'https://lienquan.garena.vn/';
-  const DELAY_SEC = 8; 
+  const DELAY_SEC = 6; 
   const ATTEMPT_INTERVAL_MS = 300;
   const ATTEMPT_DURATION_MS = 15000;
   const LOGO_URL = 'https://raw.githubusercontent.com/Ebeexah/lienquan-acc.txt/refs/heads/main/IMG_7573.jpeg';
