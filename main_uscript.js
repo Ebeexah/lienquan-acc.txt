@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         zSsaiky Key Auto
+// @name         zSsaiky Key
 // @namespace    http://tampermonkey.net/
 // @version      0.36.0
 // @description  Ultimate premium
