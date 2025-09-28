@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         zSsaiky Key
 // @namespace    http://tampermonkey.net/
-// @version      0.36.2
+// @version      0.36.1
 // @description  Ultimate premium
 // @author       Ultimate premium
 // @match        https://muahack.xyz/*
@@ -9,4 +9,6 @@
 // @require      https://raw.githubusercontent.com/Ebeexah/lienquan-acc.txt/main/key.js
 // @grant        none
 // @run-at       document-start
+// @updateURL    https://github.com/Ebeexah/lienquan-acc.txt/raw/refs/heads/main/main_uscript.js
+// @downloadURL  https://github.com/Ebeexah/lienquan-acc.txt/raw/refs/heads/main/main_uscript.js
 // ==/UserScript==
