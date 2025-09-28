@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         zSsaiky
 // @namespace    http://tampermonkey.net/
-// @version      0.36.0
+// @version      0.36.1
 // @description  Ultimate premium
 // @author       Neutron Systems
 // @match        https://muahack.xyz/*
