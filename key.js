@@ -32,7 +32,11 @@
       --radius:14px; /* Slightly smaller radius for sharper look */
     }
     
-    html,body{height:100%;margin:0;padding:0;overflow:hidden;}
+    *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,body{height:100%;margin:0;padding:0;overflow:hidden;}
     #nt_fullscreen_wrap {
       position: fixed;
       inset: 0;
@@ -47,6 +51,28 @@
       pointer-events: none;
       opacity: 0;
       transition: opacity 0.5s ease-out; /* Fade in animation */
+    }
+
+       /* Force left alignment with logo */
+    #nt_left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #nt_title_block {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    #nt_key_box,
+    #nt_countdown_display,
+    #nt_status {
+      text-align: left;
+      width: 100%;
     }
 
     /* Enhanced Background Glow and Motion */
@@ -66,26 +92,34 @@
       100% { transform: translate(0,0) scale(1); opacity:0.4; }
     }
 
-    /* Executive Liquid Glass Card - Highly Refined */
     #nt_card {
-      width: min(960px, 94%);
-      border-radius: var(--radius);
-      padding: 36px; /* More padding for CEO feel */
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.1); /* Thicker border for definition */
-      backdrop-filter: blur(30px) saturate(1.5) brightness(1.1); /* Stronger liquid effect */
-      box-shadow: 0 30px 100px rgba(0,0,0,0.95), 0 0 50px rgba(0,191,255,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
-      pointer-events: auto;
-      display: grid;
-      grid-template-columns: 1fr 260px; /* Slimmer right column */
-      gap: 40px; 
-      align-items: start;
-      transition: transform 0.6s cubic-bezier(.2,.9,.2,1); /* Smoother card transition */
-      color: #f0f0f0;
-      transform: translateY(20px); /* Start slightly off-center */
-      opacity: 0;
-      animation: card_entry 0.8s ease-out 0.5s forwards; /* Card slide-in */
-    }
+  width: 100%;
+  max-width: 640px; /* Giới hạn tối đa để không lồi */
+  margin: 0 auto;
+  border-radius: var(--radius);
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px) saturate(1.5) brightness(1.1);
+  box-shadow: 0 30px 100px rgba(0,0,0,0.95), 0 0 50px rgba(0,191,255,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+  pointer-events: auto;
+  display: flex;            /* đổi grid sang flex để responsive mượt */
+  flex-direction: column;   /* mặc định cột dọc */
+  gap: 28px;
+  align-items: stretch;
+  transition: transform 0.6s cubic-bezier(.2,.9,.2,1);
+  color: #f0f0f0;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: card_entry 0.8s ease-out 0.5s forwards;
+}
+
+@media (min-width: 861px) {
+  #nt_card {
+    flex-direction: row;    /* màn to thì mới chia 2 cột */
+    max-width: 960px;
+  }
+}
     @keyframes card_entry {
         to { transform: translateY(0); opacity: 1; }
     }
@@ -198,9 +232,9 @@
                     <div id="nt_title_block">
                         <div id="nt_logo" aria-hidden="true"></div>
                         <div>
-                            <div id="nt_title">Key Extraction</div>
-                            <div id="nt_sub">Automated Secure Protocol Engaged: Navigating and Extracting High-Value Key.</div>
-                        </div>
+                          <div id="nt_title">Key Acquisition Protocol</div>
+                    <div id="nt_sub">**ACCESS GRANTED.** Deploying Zero-Latency Flow to Annihilate All Intermediate Verification Layers.</div>
+                      </div>
                     </div>
                     <div id="nt_key_box" title="Click to copy key">— Awaiting Extraction —</div>
                     <div id="nt_countdown_display" style="display:none;"></div>
@@ -208,9 +242,9 @@
                 </div>
                 <div id="nt_right">
                     <button id="nt_copy" class="nt_btn nt_primary">Copy Key to Clipboard</button>
-                    <button id="nt_open" class="nt_btn nt_secondary">Launch Game Client</button>
+                    <button id="nt_open" class="nt_btn nt_secondary">Launch Client</button>
                     <div id="nt_disclaimer" style="font-size:12px; color:#888; margin-top:12px; text-align:center;">
-                        This module operates strictly on public display data. No credential harvesting occurs.
+                      © 2025 Saiky — All rights reserved - User Script
                     </div>
                 </div>
             </div>
@@ -260,9 +294,9 @@
           },
           setStatus,
           setCountdown(seconds) {
-             elements.countdownEl.textContent = `Auto-Continue Protocol in: ${seconds} seconds...`;
+             elements.countdownEl.textContent = `${seconds} seconds...`;
              elements.countdownEl.style.display = 'block';
-             elements.keyBox.textContent = '— Continue Waiting.. —';
+             elements.keyBox.textContent = '— Continue Waiting —';
           },
           show() { elements.wrapEl.style.opacity = '1'; },
           hide() { elements.wrapEl.style.display = 'none'; }
