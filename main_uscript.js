@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         zSsaiky Key
 // @namespace    http://tampermonkey.net/
-// @version      0.36.0.5
+// @version      0.36.0.6
 // @description  Ultimate premium
 // @author       Ultimate premium
 // @match        https://muahack.xyz/*
