@@ -1,6 +1,6 @@
 // ==UserScript==
 // @namespace    http://tampermonkey.net/
-// @version      0.36.2
+// @version      0.36.3
 // @match        https://muahack.xyz/*
 // @grant        none
 // @run-at       document-start
